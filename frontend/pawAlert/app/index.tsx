@@ -6,17 +6,19 @@ export default function Index() {
 
 
   const handleSubmit =async() =>{
-    const animalData = {name};
+    const petData = { petName: name }; 
 
-    const respose = await fetch("",{
+    const respose = await fetch("http://192.168.1.63:8000/admin/upload-pet-data",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(animalData),
+      body: JSON.stringify(petData),
 
     })
     alert("data submited")
+    setName("");
+    console.log("data fetched from backend")
     
 
   }
